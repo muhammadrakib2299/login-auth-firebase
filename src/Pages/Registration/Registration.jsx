@@ -13,12 +13,11 @@ function Registration() {
 
     // Create User
     createUser(email, password)
-      .then((result) => {
-        console.log(result);
+      .then(() => {
         console.log(alert("succesfully register"));
       })
       .catch((error) => {
-        console.log(error);
+        console.log(alert(error.massage));
       });
   };
 

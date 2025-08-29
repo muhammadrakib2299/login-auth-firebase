@@ -3,8 +3,8 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext } from "react";
 
 function Navbar() {
-  const authInfo = useContext(AuthContext);
-  console.log(authInfo);
+  const { user } = useContext(AuthContext);
+
   const navlinks = (
     <>
       <li>
@@ -54,20 +54,23 @@ function Navbar() {
               {navlinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
-            <Link to="/">Firebase</Link>
-          </a>
+
+          <Link className="btn btn-ghost text-xl" to="/">
+            Firebase
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navlinks}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn mx-2">
-            <Link to="/login">login</Link>
-          </a>
-          <a className="btn mx-2">
-            <Link to="/registration">Registration</Link>
-          </a>
+          <Link className="btn mx-2" to="/login">
+            login
+          </Link>
+
+          <Link className="btn mx-2" to="/registration">
+            Registration
+          </Link>
+          {/* <a>{user}</a> */}
         </div>
       </div>
     </div>

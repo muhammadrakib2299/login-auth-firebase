@@ -12,8 +12,7 @@ function Login() {
 
     //User Login
     LoginUser(email, password)
-      .then((result) => {
-        console.log(result);
+      .then(() => {
         console.log(alert("Sucessfully Login"));
       })
       .catch((error) => {
