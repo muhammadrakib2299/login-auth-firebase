@@ -3,7 +3,17 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext } from "react";
 
 function Navbar() {
-  const { user } = useContext(AuthContext);
+  const { user, LogOutUser } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    LogOutUser()
+      .then(() => {
+        alert("Logout Succesfully");
+      })
+      .catch((error) => {
+        console.log(alert(error.massage));
+      });
+  };
 
   const navlinks = (
     <>
@@ -63,14 +73,25 @@ function Navbar() {
           <ul className="menu menu-horizontal px-1">{navlinks}</ul>
         </div>
         <div className="navbar-end">
-          <Link className="btn mx-2" to="/login">
-            login
-          </Link>
-
-          <Link className="btn mx-2" to="/registration">
-            Registration
-          </Link>
-          {/* <a>{user}</a> */}
+          <div>
+            {user ? (
+              <>
+                {user.email}
+                <Link onClick={handleLogOut} className="btn mx-3">
+                  Log Out
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link className="btn mx-2" to="/login">
+                  login
+                </Link>
+                <Link className="btn mx-2" to="/registration">
+                  Registration
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>
