@@ -32,6 +32,13 @@ function Navbar() {
       <li>
         <NavLink to="/contact">Contact</NavLink>
       </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
