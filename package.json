@@ -2,6 +2,12 @@
   "name": "login-registration-private-route",
   "private": true,
   "version": "0.0.0",
+  "description": "Firebase authentication demo built with React (Vite), React Router, Tailwind CSS and DaisyUI.",
+  "author": "Md. Rakib (https://devrakib.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muhammadrakib2299/login-auth-firebase.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
